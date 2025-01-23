@@ -3,7 +3,7 @@ import cv2
 import albumentations as A
 from tqdm import tqdm
 
-# Veri artırma pipeline'ı tanımlama
+# Veri artırma pipeline
 augmentation_pipeline = A.Compose([
     A.HorizontalFlip(p=0.5),
     A.VerticalFlip(p=0.2),
@@ -97,7 +97,6 @@ def apply_augmentation():
                     file.write(f"{class_id} {x_center:.6f} {y_center:.6f} {width:.6f} {height:.6f}\n")
 
     print("Veri artırma işlemi tamamlandı!")
-
-# Pipeline'ı çalıştırma
+    
 if __name__ == "__main__":
     apply_augmentation()
