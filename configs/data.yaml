@@ -1,0 +1,17 @@
+# YOLOv9 veri seti yapılandırması
+# Çuval kusur tespiti projesi
+
+# Sınıf isimleri
+names:
+  0: tear  # Yırtık
+  1: print  # Baskı hatası
+  2: stitch  # Dikiş problemi
+
+# Veri seti yolları
+path: data  # Ana veri seti dizini
+train: train/images  # Eğitim görüntüleri
+val: val/images  # Doğrulama görüntüleri
+test: test/images  # Test görüntüleri
+
+# Veri seti istatistikleri
+nc: 3  # Sınıf sayısı

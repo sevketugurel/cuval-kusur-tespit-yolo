@@ -1,0 +1,27 @@
+# Veri artırma pipeline yapılandırması
+# YOLOv9 çuval kusur tespiti projesi için
+
+# Dizin yapılandırması
+input_image_dir: 'data/train/images'
+input_label_dir: 'data/train/labels'
+output_image_dir: 'data/augmented/images'
+output_label_dir: 'data/augmented/labels'
+
+# Genel yapılandırma
+variations_per_image: 3  # Her görüntü için kaç varyasyon oluşturulacak
+preserve_original: true  # Orijinal görüntüleri çıktı dizinine kopyala
+
+# Veri artırma olasılıkları
+augmentation_probability: 0.5  # Genel veri artırma olasılığı
+mosaic_probability: 0.3  # Mozaik veri artırma olasılığı
+mixup_probability: 0.2  # Mixup veri artırma olasılığı
+
+# Veri artırma parametreleri
+rotation_limit: 30  # Döndürme limiti (derece)
+brightness_contrast_limit: 0.3  # Parlaklık ve kontrast değişim limiti
+noise_probability: 0.3  # Gürültü ekleme olasılığı
+shift_limit: 0.1  # Kaydırma limiti
+scale_limit: 0.2  # Ölçekleme limiti
+hue_saturation_value_probability: 0.5  # HSV değişim olasılığı
+blur_probability: 0.2  # Bulanıklaştırma olasılığı
+cutout_probability: 0.2  # Cutout olasılığı 
