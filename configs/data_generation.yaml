@@ -1,0 +1,28 @@
+# Veri üretimi ve artırma yapılandırması
+# YOLOv9 çuval kusur tespiti projesi için
+
+# Cycle-GAN yapılandırması
+cyclegan_model: 'models/cyclegan/latest_net_G.pth'  # Önceden eğitilmiş Cycle-GAN model yolu
+source_images: 'data/raw/normal'  # Kusursuz çuval görüntüleri
+synthetic_output: 'data/synthetic/images'  # Sentetik kusurlu görüntülerin kaydedileceği dizin
+num_synthetic: 100  # Üretilecek sentetik görüntü sayısı
+label_template: 'configs/label_templates/defect_template.txt'  # Sentetik görüntüler için etiket şablonu
+
+# Veri artırma yapılandırması
+augmentation_config: 'utils/augmentation/config.yaml'  # Veri artırma yapılandırma dosyası
+input_images: 'data/train/images'  # Veri artırma için giriş görüntü dizini (Cycle-GAN kullanılmazsa)
+input_labels: 'data/train/labels'  # Veri artırma için giriş etiket dizini (Cycle-GAN kullanılmazsa)
+output_images: 'data/augmented/images'  # Veri artırma için çıkış görüntü dizini
+output_labels: 'data/augmented/labels'  # Veri artırma için çıkış etiket dizini
+variations: 3  # Görüntü başına varyasyon sayısı
+
+# İş akışı yapılandırması
+workflow:
+  # Cycle-GAN ile sentetik görüntüler üret, ardından veri artırma uygula
+  full_pipeline: true
+  
+  # Sadece Cycle-GAN ile sentetik görüntüler üret
+  only_cyclegan: false
+  
+  # Sadece veri artırma uygula
+  only_augmentation: false 
