@@ -8,7 +8,7 @@ names:
   2: stitch  # Dikiş problemi
 
 # Veri seti yolları
-path: data  # Ana veri seti dizini
+path: ../data  # Ana veri seti dizini
 train: train/images  # Eğitim görüntüleri
 val: val/images  # Doğrulama görüntüleri
 test: test/images  # Test görüntüleri
